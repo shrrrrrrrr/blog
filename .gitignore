@@ -1,0 +1,18 @@
+# 构建产物由部署平台自动生成，不需要提交到 Git。
+dist/
+
+# Vercel 和 Cloudflare 命令行工具创建的本地状态。
+.vercel/
+.wrangler/
+
+# 常见系统与编辑器临时文件。
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# 本项目不需要依赖，但保留该规则可避免未来误提交依赖目录。
+node_modules/
+
+# 自动化验证使用的临时文章，不属于正式博客内容。
+test-fixtures/

@@ -1,0 +1,12 @@
+# Cloudflare Pages 项目配置。
+# 项目名只能包含小写字母、数字和连字符；如已有同名项目可在创建时修改。
+name = "song-haoran-tech-blog"
+
+# Cloudflare 用兼容日期决定运行时行为；本项目目前仅发布静态文件。
+compatibility_date = "2026-08-13"
+
+# npm run build 生成的目录，也是 Cloudflare Pages 最终发布的目录。
+pages_build_output_dir = "./dist"
+
+# 不向 Cloudflare 发送 Wrangler 的使用情况指标。
+send_metrics = false
