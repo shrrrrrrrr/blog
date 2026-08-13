@@ -30,6 +30,11 @@ await cp(path.join(projectRoot, "content"), path.join(outputDirectory, "content"
   recursive: true,
 });
 
+// assets 保存站点头像等公开静态资源，需要随页面一起发布。
+await cp(path.join(projectRoot, "assets"), path.join(outputDirectory, "assets"), {
+  recursive: true,
+});
+
 // GitHub Pages 看到 .nojekyll 后会直接提供静态文件，不再尝试 Jekyll 构建。
 await writeFile(path.join(outputDirectory, ".nojekyll"), "", "utf8");
 
