@@ -123,7 +123,7 @@ excerpt: "文章列表中显示的一段简短说明。"
 
 ## 推送到 GitHub
 
-在 GitHub 新建一个空仓库，例如 `song-haoran-tech-blog`。如果希望使用免费的 GitHub Pages，建议仓库设为 Public。
+在 GitHub 新建一个空仓库，例如 `blog`。如果希望使用免费的 GitHub Pages，建议仓库设为 Public。
 
 然后在本地项目目录运行：
 
@@ -131,7 +131,7 @@ excerpt: "文章列表中显示的一段简短说明。"
 git init -b main
 git add .
 git commit -m "Initial personal tech blog"
-git remote add origin https://github.com/你的用户名/song-haoran-tech-blog.git
+git remote add origin https://github.com/shrrrrrrrr/blog.git
 git push -u origin main
 ```
 
@@ -146,9 +146,9 @@ git push -u origin main
 1. 打开仓库的 **Settings → Pages**。
 2. 在 **Build and deployment → Source** 中选择 **GitHub Actions**。
 3. 打开 **Actions** 页面，等待 `Deploy static blog to GitHub Pages` 完成。
-4. 部署地址通常是 `https://你的用户名.github.io/仓库名/`。
+4. 部署地址通常是 `https://shrrrrrrrr.github.io/blog/`。
 
-如果仓库名正好是 `你的用户名.github.io`，地址会是 `https://你的用户名.github.io/`。
+如果仓库名正好是 `shrrrrrrrr.github.io`，地址会是 `https://shrrrrrrrr.github.io/`。
 
 ## 连接 Cloudflare
 
@@ -164,7 +164,7 @@ git push -u origin main
 8. API token 的变量名使用 `CLOUDFLARE_API_TOKEN`。
 9. 保存并部署。
 
-仓库里的 `wrangler.toml` 已声明 `dist` 是静态资源目录。完成后会得到一个 `*.workers.dev` 或 Cloudflare 提供的项目访问地址。Cloudflare 会在每次推送 `main` 时更新正式站点。
+仓库里的 `wrangler.toml` 已声明 `dist` 是静态资源目录。完成后会得到一个类似 `https://blog.shrrrrrrrr.workers.dev` 的地址，具体以 Cloudflare 页面显示为准。Cloudflare 会在每次推送 `main` 时更新正式站点。
 
 Cloudflare 官方文档：[Git integration](https://developers.cloudflare.com/pages/get-started/git-integration/) 和 [Wrangler deploy](https://developers.cloudflare.com/workers/wrangler/commands/#deploy)。
 
@@ -177,7 +177,7 @@ Cloudflare 官方文档：[Git integration](https://developers.cloudflare.com/pa
 5. `vercel.json` 已经指定 `npm run build` 和 `dist`，通常无需再修改。
 6. 点击 **Deploy**。
 
-完成后会得到一个 `*.vercel.app` 地址。以后推送 `main` 会更新生产站点，Pull Request 会生成独立预览地址。
+完成后会得到一个类似 `https://blog-shrrrrrrrr.vercel.app` 的地址，具体以 Vercel 页面显示为准。以后推送 `main` 会更新生产站点，Pull Request 会生成独立预览地址。
 
 Vercel 官方文档：[Deployments](https://vercel.com/docs/deployments/overview) 和 [`vercel.json`](https://vercel.com/docs/project-configuration/vercel-json)。
 

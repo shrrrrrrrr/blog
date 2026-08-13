@@ -209,7 +209,7 @@ GitHub Pages、Cloudflare Pages 或 Vercel 连接仓库后，会自动重新部�
 
 1. 登录 GitHub。
 2. 点击右上角 `+`，选择 **New repository**。
-3. Repository name 填写 `song-haoran-tech-blog`。
+3. Repository name 填写 `blog`。
 4. 如果使用 GitHub 免费版 Pages，选择 **Public** 最省事。
 5. 不勾选自动创建 README、`.gitignore` 或 License，因为本地已经有这些文件。
 6. 点击 **Create repository**。
@@ -222,11 +222,11 @@ GitHub Pages、Cloudflare Pages 或 Vercel 连接仓库后，会自动重新部�
 git init -b main
 git add .
 git commit -m "Initial personal tech blog"
-git remote add origin https://github.com/你的用户名/song-haoran-tech-blog.git
+git remote add origin https://github.com/shrrrrrrrr/blog.git
 git push -u origin main
 ```
 
-首次推送可能要求浏览器登录 GitHub。如果使用 SSH，需要先在 GitHub 配置 SSH Key，再把远程地址换成 `git@github.com:你的用户名/song-haoran-tech-blog.git`。
+首次推送可能要求浏览器登录 GitHub。如果使用 SSH，需要先在 GitHub 配置 SSH Key，再把远程地址换成 `git@github.com:shrrrrrrrr/blog.git`。
 
 ### 开启 GitHub Pages
 
@@ -258,14 +258,14 @@ Cloudflare 的 Git 集成会监听同一个 GitHub 仓库。
 部署成功后，正式地址类似：
 
 ```text
-https://blog.你的账号.workers.dev
+https://blog.shrrrrrrrr.workers.dev
 ```
 
 ## 连接 Vercel
 
 1. 登录 [Vercel](https://vercel.com/)。
 2. 点击 **Add New → Project**，连接 GitHub。
-3. 选择 `song-haoran-tech-blog` 仓库并点击 Import。
+3. 选择 `blog` 仓库并点击 Import。
 4. Framework Preset 选择 `Other`。
 5. Root Directory 保持 `./`。
 6. `vercel.json` 已配置 Build Command 和 Output Directory，确认显示为 `npm run build` 与 `dist`。
@@ -274,7 +274,7 @@ https://blog.你的账号.workers.dev
 部署成功后，正式地址类似：
 
 ```text
-https://song-haoran-tech-blog.vercel.app
+https://blog-shrrrrrrrr.vercel.app
 ```
 
 ## 三个平台如何取舍
