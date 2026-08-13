@@ -4,9 +4,11 @@
 
 ## 先理解两种文章状态
 
-网站同时提供“本地内容库”和“公开文章”两种机制。
+网站同时提供“作者工作台”和“公开文章”两种机制。
 
-本地内容库适合试读和整理。你在网页上拖入 Markdown、JSON、TXT 或 HTML 后，文章保存在当前浏览器中。刷新或关闭页面不会立即丢失，但换电脑、换浏览器、使用无痕模式或清除浏览器数据时，这些文章不会自动同步。
+作者工作台适合试读和整理。你在网页上拖入 Markdown、JSON、TXT 或 HTML 后，文章保存在当前浏览器中。刷新或关闭页面不会立即丢失，但换电脑、换浏览器、使用无痕模式或清除浏览器数据时，这些文章不会自动同步。
+
+工作台默认不展示给读者。需要使用时，在网站地址后加 `#studio`，例如 `https://你的网址/#studio`。
 
 公开文章保存在项目的 `content/posts` 文件夹中，并登记在 `content/manifest.json`。这些文件提交到 GitHub 并重新部署后，所有网站访客都能看见。
 
@@ -56,9 +58,9 @@ npx serve dist
 
 ## 导入文章
 
-滚动到“内容库”，点击虚线框选择文件，或者把多个文件直接拖入虚线框。
+访问 `#studio` 打开作者工作台后，点击虚线框选择文件，或者把多个文件直接拖入虚线框。
 
-单个文件不能超过 2 MB。一次可以导入多个文件，某个文件失败不会阻止其他文件。
+单个文件不能超过 2 MB。一次可以导入多个文件，某个文件失败不会阻止其他文件。这里的导入不是公开上传；它只保存在当前浏览器里，主要用于试读、整理和导出。
 
 ### Markdown
 
@@ -236,27 +238,27 @@ git push -u origin main
 
 项目里的 `.github/workflows/deploy-pages.yml` 已经完成构建和部署配置，无需在 GitHub 网页再创建工作流。
 
-## 连接 Cloudflare Pages
+## 连接 Cloudflare
 
-Cloudflare Pages 的 Git 集成会监听同一个 GitHub 仓库。
+Cloudflare 的 Git 集成会监听同一个 GitHub 仓库。
 
 1. 登录 [Cloudflare Dashboard](https://dash.cloudflare.com/)。
-2. 打开 **Workers & Pages**，选择创建 Pages 应用并连接 Git。
+2. 打开 **Workers & Pages**，选择创建应用并连接 Git。
 3. 第一次使用时，Cloudflare 会请求安装 GitHub App。只授权这个仓库即可，不必授权全部仓库。
-4. 选择 `song-haoran-tech-blog`。
-5. 项目名填写 `song-haoran-tech-blog`，生产分支选择 `main`。
-6. Framework preset 选择 `None`。
-7. Build command 填写 `npm run build`。
-8. Build output directory 填写 `dist`。
-9. Root directory 留空，环境变量也留空。
+4. 选择 `blog` 仓库。
+5. Project name 填写 `blog`，生产分支选择 `main`。
+6. Build command 填写 `npm run build`。
+7. Deploy command 填写 `npx wrangler deploy`。
+8. Root directory 填写 `/`。
+9. API token 的变量名使用 `CLOUDFLARE_API_TOKEN`。
 10. 保存并部署。
 
-仓库里的 `wrangler.toml` 已记录项目名、兼容日期和输出目录。如果你在 Cloudflare 创建了不同名称的项目，需要把其中的 `name` 改成相同名称后再提交。
+仓库里的 `wrangler.toml` 已记录项目名、兼容日期和静态资源目录。如果你在 Cloudflare 创建了不同名称的项目，需要把其中的 `name` 改成相同名称后再提交。
 
 部署成功后，正式地址类似：
 
 ```text
-https://song-haoran-tech-blog.pages.dev
+https://blog.你的账号.workers.dev
 ```
 
 ## 连接 Vercel

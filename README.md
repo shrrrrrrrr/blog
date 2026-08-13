@@ -116,10 +116,10 @@ excerpt: "文章列表中显示的一段简短说明。"
 
 | 操作 | 保存位置 | 谁能看到 | 适合用途 |
 |---|---|---|---|
-| 网页内容库导入 | 当前浏览器 `localStorage` | 只有当前浏览器 | 试读、整理、格式转换 |
+| 作者工作台导入 | 当前浏览器 `localStorage` | 只有当前浏览器 | 试读、整理、格式转换 |
 | 放入 `content/posts` 并登记清单 | GitHub 仓库 | 网站的所有访客 | 正式发布 |
 
-清除浏览器数据会删除本地导入内容。重要文章请导出 JSON 备份，或作为 Markdown 提交到仓库。
+作者工作台默认不展示给读者。需要使用导入导出工具时，在网站地址后加 `#studio`，例如 `https://你的网址/#studio`。清除浏览器数据会删除本地导入内容。重要文章请导出 JSON 备份，或作为 Markdown 提交到仓库。
 
 ## 推送到 GitHub
 
@@ -150,24 +150,23 @@ git push -u origin main
 
 如果仓库名正好是 `你的用户名.github.io`，地址会是 `https://你的用户名.github.io/`。
 
-## 连接 Cloudflare Pages
+## 连接 Cloudflare
 
-建议使用 Git 集成，这样每次推送 GitHub 都会自动部署。
+当前项目已经适配 Cloudflare 的 Workers & Pages 新版部署流程。建议使用 Git 集成，这样每次推送 GitHub 都会自动部署。
 
 1. 登录 Cloudflare，进入 **Workers & Pages**。
-2. 选择 **Create → Pages → Connect to Git**。
+2. 选择 **Create → Connect to Git**。
 3. 授权 Cloudflare 访问 GitHub，并选择这个仓库。
-4. 项目名建议填写 `song-haoran-tech-blog`，与 `wrangler.toml` 一致。
-5. Production branch 选择 `main`。
-6. Framework preset 选择 `None`。
-7. Build command 填写 `npm run build`。
-8. Build output directory 填写 `dist`。
-9. Root directory 留空。
-10. 点击 **Save and Deploy**。
+4. Project name 填写 `blog`，Production branch 选择 `main`。
+5. Build command 填写 `npm run build`。
+6. Deploy command 填写 `npx wrangler deploy`。
+7. Root directory 填写 `/`。
+8. API token 的变量名使用 `CLOUDFLARE_API_TOKEN`。
+9. 保存并部署。
 
-完成后会得到一个 `*.pages.dev` 地址。Cloudflare 会在每次推送 `main` 时更新正式站点，在其他分支上生成预览站点。
+仓库里的 `wrangler.toml` 已声明 `dist` 是静态资源目录。完成后会得到一个 `*.workers.dev` 或 Cloudflare 提供的项目访问地址。Cloudflare 会在每次推送 `main` 时更新正式站点。
 
-Cloudflare 官方文档：[Git integration](https://developers.cloudflare.com/pages/get-started/git-integration/) 和 [Build configuration](https://developers.cloudflare.com/pages/configuration/build-configuration/)。
+Cloudflare 官方文档：[Git integration](https://developers.cloudflare.com/pages/get-started/git-integration/) 和 [Wrangler deploy](https://developers.cloudflare.com/workers/wrangler/commands/#deploy)。
 
 ## 连接 Vercel
 
@@ -185,10 +184,10 @@ Vercel 官方文档：[Deployments](https://vercel.com/docs/deployments/overview
 ## 应该选择哪个平台？
 
 - GitHub Pages：最简单，和开源仓库结合紧密，适合这个纯静态博客。
-- Cloudflare Pages：全球网络、预览部署和自定义域名体验很好。
+- Cloudflare：全球网络、自定义域名和长期静态站点托管体验很好。
 - Vercel：部署界面直观，未来改用前端框架也很方便。
 
-可以同时连接三个平台进行比较，但对外最好只公布一个正式网址，避免搜索引擎把相同内容识别为重复页面。对于当前项目，建议先使用 GitHub Pages；需要自定义域名或更完整的预览体验时再使用 Cloudflare Pages。
+可以同时连接三个平台进行比较，但对外最好只公布一个正式网址，避免搜索引擎把相同内容识别为重复页面。对于当前项目，推荐把 Cloudflare 作为正式发布平台。
 
 ## 详细使用说明
 

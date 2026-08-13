@@ -37,7 +37,6 @@
       <nav class="main-nav" aria-label="主导航">
         <a class="active" href="#top">首页</a>
         <a href="#articles">文章</a>
-        <a href="#library">内容库</a>
         <a href="#about">关于</a>
       </nav>
 
@@ -77,7 +76,7 @@
           </p>
 
           <div class="hero-links reveal delay-3">
-            <a class="primary-link" href="#library">导入第一篇文章 <span>↘</span></a>
+            <a class="primary-link" href="#articles">查看文章 <span>↘</span></a>
             <a class="text-link" href="#about">认识我</a>
           </div>
         </div>
@@ -147,28 +146,27 @@
           <span class="empty-number" aria-hidden="true">∅</span>
           <p class="side-kicker">THE FIRST COMMIT</p>
           <h2>这里还没有文章。</h2>
-          <p>不必着急。写好第一份 Markdown，再把它拖进下面的内容库。</p>
-          <a href="#library">前往内容库 <span>↓</span></a>
+          <p>作者还没有发布公开文章。等第一篇 Markdown 推送到 GitHub 后，这里会自动出现。</p>
         </div>
 
         <p id="no-results" class="no-results" hidden>没有找到匹配的文章，换个关键词试试。</p>
       </section>
 
       <!-- 内容库：负责本地导入、数据说明和多格式导出。 -->
-      <section id="library" class="library-section" aria-labelledby="library-title">
+      <section id="studio" class="library-section" aria-labelledby="library-title" hidden>
         <div class="section-label section-label-light">
           <span>02</span>
-          <p id="library-title">内容库 / CONTENT LIBRARY</p>
+          <p id="library-title">作者工作台 / AUTHOR STUDIO</p>
           <i></i>
         </div>
 
         <div class="library-grid">
           <div class="library-intro">
             <p class="side-kicker">LOCAL FIRST</p>
-            <h2>文件留在本地，<br />写作由你掌控。</h2>
+            <h2>导入只是预览，<br />发布仍在 GitHub。</h2>
             <p>
-              文章会保存在当前浏览器的本地存储中。导入过程不会上传文件，
-              适合在正式接入内容管理系统之前建立自己的写作习惯。
+              拖入文件只会把文章保存到当前浏览器，方便作者试读、整理和导出。
+              读者不会看到这个工作台；正式公开文章需要放入 content/posts 并推送到 GitHub。
             </p>
 
             <div class="privacy-note">

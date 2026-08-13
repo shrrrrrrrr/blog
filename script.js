@@ -30,6 +30,7 @@ const articleCount = document.querySelector("#article-count");
 const terminalCount = document.querySelector("#terminal-count");
 const emptyState = document.querySelector("#empty-state");
 const noResults = document.querySelector("#no-results");
+const studioSection = document.querySelector("#studio");
 const fileInput = document.querySelector("#file-input");
 const dropZone = document.querySelector("#drop-zone");
 const importStatus = document.querySelector("#import-status");
@@ -1069,6 +1070,14 @@ function showToast(message, isError = false) {
 /* --------------------------------------------------------------------------
  * 8. 事件绑定
  * -------------------------------------------------------------------------- */
+
+function syncStudioVisibility() {
+  const isStudioHash = window.location.hash === "#studio";
+  studioSection.hidden = !isStudioHash;
+}
+
+syncStudioVisibility();
+window.addEventListener("hashchange", syncStudioVisibility);
 
 // 文件选择与拖放导入。
 fileInput.addEventListener("change", () => importFiles(fileInput.files));
