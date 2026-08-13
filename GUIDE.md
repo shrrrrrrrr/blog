@@ -1,6 +1,6 @@
 # 技术博客使用指南
 
-这份指南面向网站作者宋浩然，说明如何预览网站、导入和导出内容、写第一篇 Markdown、正式发布文章，以及连接 GitHub、Cloudflare Pages 和 Vercel。
+这份指南面向网站作者 shrrrrrrrr，说明如何预览网站、导入和导出内容、写第一篇 Markdown、正式发布文章，以及连接 GitHub、Cloudflare Pages 和 Vercel。
 
 ## 先理解两种文章状态
 
@@ -289,7 +289,7 @@ GitHub Pages 最适合作为第一站，因为不需要额外账号体系，代�
 
 ### 修改个人信息
 
-真实身份信息写在 `index.html` 中。搜索“宋浩然”“北京航空航天大学”或“软件工程学院”即可找到。修改后检查 `<title>`、`description`、首页、终端名片、关于区域和页脚是否保持一致。
+公开展示信息写在 `index.html` 中。搜索“shrrrrrrrr”“北京航空航天大学”或“软件工程学院”即可找到。修改后检查 `<title>`、`description`、首页、终端名片、关于区域和页脚是否保持一致。
 
 ### 修改颜色
 

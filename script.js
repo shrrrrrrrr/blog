@@ -1,5 +1,5 @@
 /* ==========================================================================
- * 宋浩然的技术博客：浏览器端内容管理脚本
+ * shrrrrrrrr 的技术博客：浏览器端内容管理脚本
  *
  * 设计原则：
  * 1. 不依赖后端服务，文章默认保存在浏览器 localStorage 中。
@@ -881,7 +881,7 @@ function exportLibrary(format) {
   if (format === "json") {
     const backup = {
       version: 1,
-      owner: "宋浩然",
+      owner: "shrrrrrrrr",
       exportedAt: new Date().toISOString(),
       posts,
     };
@@ -950,7 +950,7 @@ function createStandaloneHtml(libraryPosts) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>宋浩然的技术博客文章</title>
+  <title>shrrrrrrrr 的技术博客文章</title>
   <style>
     body{max-width:800px;margin:0 auto;padding:40px 22px;color:#1b1b18;background:#f4f2eb;font:17px/1.9 Georgia,"Noto Serif SC",serif}
     article{padding:40px 0 70px;border-bottom:1px solid #bbb8ae}h1{font-size:2.5em;line-height:1.2}.meta,.tags{color:#777;font:12px monospace}.tags{display:flex;gap:12px;margin:12px 0 35px;flex-wrap:wrap}
@@ -958,7 +958,7 @@ function createStandaloneHtml(libraryPosts) {
   </style>
 </head>
 <body>
-  <header><p>宋浩然 · 北京航空航天大学软件工程学院</p></header>
+  <header><p>shrrrrrrrr · 北京航空航天大学软件工程学院</p></header>
   <main>${articles}</main>
 </body>
 </html>`;

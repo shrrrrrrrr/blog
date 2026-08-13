@@ -1,6 +1,6 @@
-# 宋浩然的技术博客
+# shrrrrrrrr 的技术博客
 
-这是宋浩然的个人技术博客。宋浩然来自北京航空航天大学软件工程学院，目前是一名学生。
+这是 shrrrrrrrr 的个人技术博客。作者来自北京航空航天大学软件工程学院，目前是一名学生。
 
 网站使用原生 HTML、CSS 和 JavaScript 构建，不依赖前端框架。它可以直接部署到 GitHub Pages、Cloudflare Pages 或 Vercel，并支持从 Markdown、JSON、TXT 和 HTML 文件导入文章。
 
