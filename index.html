@@ -37,6 +37,7 @@
       <nav class="main-nav" aria-label="主导航">
         <a class="active" href="#top">首页</a>
         <a href="#articles">文章</a>
+        <a href="#projects">作品</a>
         <a href="#about">关于</a>
       </nav>
 
@@ -75,7 +76,7 @@
           </p>
 
           <div class="hero-links reveal delay-3">
-            <a class="primary-link" href="#articles">查看文章 <span>↘</span></a>
+            <a class="primary-link" href="#projects">查看作品 <span>↘</span></a>
             <a class="text-link" href="#about">认识我</a>
           </div>
         </div>
@@ -151,6 +152,72 @@
         <p id="no-results" class="no-results" hidden>没有找到匹配的文章，换个关键词试试。</p>
       </section>
 
+      <!-- 作品区域：展示真实项目与未来可补充的作品卡片，让首页具备作品集结构。 -->
+      <section id="projects" class="projects-section" aria-labelledby="projects-title">
+        <div class="section-label">
+          <span>02</span>
+          <p id="projects-title">作品</p>
+          <i></i>
+        </div>
+
+        <div class="projects-lead">
+          <p class="side-kicker">SELECTED WORKS</p>
+          <h2>把做过的东西，<br />放在文章之前被看见。</h2>
+          <p>
+            这里会收纳项目、课程实践、实验作品和可公开的学习成果。文章负责记录过程，
+            作品区负责让访客快速看到结果。
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card project-card-featured">
+            <div class="project-visual" aria-hidden="true">
+              <span>01</span>
+              <img src="./assets/dog-avatar.png" alt="" />
+            </div>
+            <div class="project-copy">
+              <p class="project-kicker">LIVE SITE</p>
+              <h3>个人技术博客</h3>
+              <p>一个部署在 Cloudflare 上的个人技术博客，支持 Markdown 文章、作者工作台和多格式导入导出。</p>
+              <div class="project-tags" aria-label="技术栈">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Cloudflare</span>
+              </div>
+              <a href="https://github.com/shrrrrrrrr/blog" target="_blank" rel="noreferrer">查看仓库 <span>↗</span></a>
+            </div>
+          </article>
+
+          <article class="project-card project-card-quiet">
+            <div class="project-visual" aria-hidden="true"><span>02</span></div>
+            <div class="project-copy">
+              <p class="project-kicker">COURSE WORK</p>
+              <h3>课程项目待整理</h3>
+              <p>之后可以放课程设计、团队项目或软件工程实践，配上截图、职责和项目链接。</p>
+              <div class="project-tags" aria-label="状态">
+                <span>准备中</span>
+                <span>可替换</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card project-card-quiet">
+            <div class="project-visual" aria-hidden="true"><span>03</span></div>
+            <div class="project-copy">
+              <p class="project-kicker">LAB / DEMO</p>
+              <h3>实验作品待补充</h3>
+              <p>适合放小工具、算法可视化、前端页面、脚本自动化等能体现动手能力的作品。</p>
+              <div class="project-tags" aria-label="状态">
+                <span>截图</span>
+                <span>链接</span>
+                <span>说明</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <!-- 内容库：负责本地导入、数据说明和多格式导出。 -->
       <section id="studio" class="library-section" aria-labelledby="library-title" hidden>
         <div class="section-label section-label-light">
@@ -215,7 +282,7 @@
       <!-- 关于区域：仅包含用户提供的背景，不虚构联系方式或个人经历。 -->
       <section id="about" class="about-section" aria-labelledby="about-title">
         <div class="section-label">
-          <span>03</span>
+          <span>04</span>
           <p>关于</p>
           <i></i>
         </div>

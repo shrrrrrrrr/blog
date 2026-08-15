@@ -203,6 +203,24 @@ GitHub Pages、Cloudflare Pages 或 Vercel 连接仓库后，会自动重新部�
 
 暂时撤下文章时，从 `content/manifest.json` 删除对应路径并提交。Markdown 文件可以继续留在仓库中，也可以移动到本地私人草稿目录。不要把未准备公开的隐私内容提交到 Public 仓库，因为 Git 历史仍可能保留旧版本。
 
+## 更新首页作品区
+
+首页的作品区写在 `index.html` 的 `projects` 区块中。每个作品是一张 `project-card`，可以修改作品名、说明、标签、截图和链接。
+
+作品截图建议放在 `assets` 文件夹，例如：
+
+```text
+assets/my-project.png
+```
+
+然后在作品卡片里引用：
+
+```html
+<img src="./assets/my-project.png" alt="" />
+```
+
+如果项目还没有公开链接，可以先不写链接；等 GitHub 仓库或在线预览地址准备好后，再补上。
+
 ## 第一次上传 GitHub
 
 ### 在 GitHub 创建仓库
